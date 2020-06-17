@@ -1,0 +1,28 @@
+{
+    "elmType": "div",
+    "style": {
+        "display": "block",
+        "background-color": "=if([$RAGStatus]=='Red','red',if([$RAGStatus]=='Amber','organge','green'))",
+        "color": "#fff",
+        "max-width": "35px",
+        "height": "35px",
+        "text-align": "centre",
+        "vertical-align": "middle",
+        "border-radius": "50%"
+    },
+    "txtContent": ""
+},
+
+{
+    "elmType": "img",
+    "_comment": "logo org",
+    "style": {
+        "max-width": "50px",
+        "padding": "2px"
+    },
+    "attributes": {
+        "src": "='https://pythongraph.sharepoint.com/sites/DataSite/SiteAssets/'hmrc.png"
+    }
+}
+
+"box-shadow": "0px 1.6px 3.6px 0 #00000024, 0px 0.3px 0.9px 0 #00000024",

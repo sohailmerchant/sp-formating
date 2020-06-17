@@ -1,0 +1,236 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/view-formatting.schema.json",
+    "debug": true,
+    "hideColumnHeader": true,
+    "hideSelection": true,
+    "rowFormatter": {
+        "elmType": "div",
+        "_comment": "top div 1",
+        "style": {
+            "display": "flex",
+            "flex-wrap": "wrap",
+            "align-items": "stretch",
+            "flex-direction": "row",
+            "padding": "10px",
+            "margin-bottom": "16px",
+            "border-radius": "5px",
+            
+            "-webkit-box-shadow": "10px 10px 28px -8px rgba(179,177,179,1)",
+        "-moz-box-shadow": "10px 10px 28px -8px rgba(179,177,179,1)",
+        "box-shadow": "10px 10px 28px -8px rgba(179,177,179,1)",
+            "background-color": "#FAF8F9",
+            "border-left": "5px solid #d3d3d3",
+            "border-color": "=if([$RAGStatus]=='Red','red',if([$RAGStatus]=='Amber','organge','green'))"
+        },
+        "attributes": {
+            "class": ""
+        },
+        "children": [
+            {
+                "elmType": "div",
+                "_comment": "div 1.1",
+                "style": {
+                    "flex-grow": "1",
+                    "display": "flex",
+                    "flex-direction": "column",
+                    "flex-wrap": "nowrap",
+                    "align-items": "stretch",
+                    "border-right": "1px solid #d3d3d3",
+                    "padding": "5px",
+                    "padding-right": "15px"
+                },
+                "children": [
+                   
+                    {
+                        "elmType": "span",
+                        "txtContent": "[$Organisation]",
+                        "attributes": {
+                            "class": "sp-ColumnDesigner-headerText"
+                        },
+                        "style": {
+                            "font-size": "16px",
+                            "font-weight": "600"
+                        }
+                    },
+                    {
+                        "elmType": "div",
+                        "style": {
+                            "font-size": "14px",
+                            "color": "#323130",
+                            "font-weight": "600",
+                            "padding-top": "10px",
+                            "margin-top": "5px",
+                            "border-top": "1px dotted #d3d3d3"
+                        },
+                        "txtContent": "[$DataReturnAgency]"
+                    },
+                    {
+                        "elmType": "button",
+                        "customRowAction": {
+                          "action": "defaultClick"
+                        },
+                        "txtContent": "View Details",
+                        "attributes": {
+                          "class": "sp-row-button"
+                        },
+                        "style":{
+                            "margin-top": "10px",
+                            "max-width": "100px"
+                        }
+                      }
+                ]
+            },
+            {
+                "elmType": "div",
+                "_comment": "div 1.2",
+                "style": {
+                    "flex-grow": "1",
+                    "display": "flex",
+                    "flex-direction": "column",
+                    "flex-wrap": "nowrap",
+                    "align-items": "stretch",
+                    "border-right": "1px solid #d3d3d3",
+                    "padding": "5px"
+                },
+                "children": [
+                    {
+                        "elmType": "span",
+                        "style": {
+                            "font-size": "14px",
+                            "color": "#323130",
+                            "font-weight": "600"
+                        },
+                        "txtContent": "[$Title]"
+                    },
+                    {
+                        "elmType": "span",
+                        "txtContent": "[$Department]"
+                    },
+                    
+                    {
+                        "elmType": "span",
+                        "style": {
+                           
+                            
+                            "margin-top":"15px"
+                        },
+                        "txtContent": "='Deadline: ' + toLocaleDateString([$Deadline])"
+                    },
+                    {
+                        "elmType": "span",
+                        "style": {
+                            "font-size": "14px",
+                            "color": "#323130",
+                            "font-weight": "600",
+                            "padding":"5px",
+                            "margin-top":"15px"
+                        },
+                        "attributes": {
+                            "class": "=if([$Reminder] <= @now, 'sp-field-severity--severeWarning', '')"
+                        },
+                        "txtContent": "='Reminder Due: ' + toLocaleDateString([$Reminder])"
+                    }
+                ]
+            },
+            {
+                "elmType": "div",
+                "_comment": "div 1.3",
+                "style": {
+                    
+                    "flex-grow": "1",
+                    "display": "flex",
+                    "flex-direction": "column",
+                    "flex-wrap": "nowrap",
+                    "align-items": "stretch",
+                    "border-right": "1px solid #d3d3d3",
+                    "padding": "5px"
+                   
+                },
+                "children": [
+                    {
+                        "elmType": "span",
+                        "style":{
+                            "width": "200px",
+                            "text-wrap": "wrap",
+                            "padding-left": "10px"
+                        
+                        },
+                        "txtContent": "='Details: ' + [$Details]"
+                    }
+                ]
+            },
+            {
+                "elmType": "button",
+                "customRowAction": {
+                    "action": "editProps"
+                },
+                "attributes": {
+                    "title": "Edit",
+                    "class": "ms-fontColor-neutralPrimary ms-fontColor-red--hover"
+                },
+                "style": {
+                    "border": "none",
+                    "background-color": "transparent",
+                    "cursor": "pointer",
+                    "font-size": "15px"
+                },
+                "children": [
+                    {
+                        "elmType": "span",
+                        "attributes": {
+                            "iconName": "Edit"
+                        }
+                    }
+                ]
+            },
+            {
+                "elmType": "button",
+                "customRowAction": {
+                    "action": "delete"
+                },
+                "attributes": {
+                    "title": "Delete",
+                    "class": "ms-fontColor-neutralPrimary ms-fontColor-red--hover"
+                },
+                "style": {
+                    "border": "none",
+                    "background-color": "transparent",
+                    "cursor": "pointer",
+                    "font-size": "15px"
+                },
+                "children": [
+                    {
+                        "elmType": "span",
+                        "attributes": {
+                            "iconName": "Delete"
+                        }
+                    }
+                ]
+            },
+            {
+                "elmType": "button",
+                "customRowAction": {
+                    "action": "defaultClick"
+                },
+                "attributes": {
+                    "title": "See more details",
+                    "class": "ms-fontColor-neutralPrimary ms-fontColor-red--hover"
+                },
+                "style": {
+                    "border": "none",
+                    "background-color": "transparent",
+                    "cursor": "pointer",
+                    "font-size": "15px"
+                },
+                "children": [
+                    {
+                        "elmType": "span",
+                        "attributes": {
+                            "iconName": "ContactInfo"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

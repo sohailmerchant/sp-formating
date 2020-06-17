@@ -202,7 +202,7 @@
           },
           "attributes": {
             "title": "See more details",
-            "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover"
+            "class": "ms-fontColor-neutralPrimary ms-fontColor-red--hover"
           },
           "style": {
             "border": "none",
